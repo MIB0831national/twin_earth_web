@@ -1,0 +1,17 @@
+from rest_framework import serializers
+from .models import User
+
+class UserCreateSerializer(serializers.Serializer):
+    email = serializers.EmailField(required=True)
+    username = serializers.CharField(required=True)
+    password = serializers.CharField(required=True)
+    print(email)
+    def create(self, validated_data):
+        user = User.objects.create( # User 생성
+            email=validated_data['email'],
+            username=validated_data['username'],
+        )
+        user.set_password(validated_data['password'])
+
+        user.save()
+        return user

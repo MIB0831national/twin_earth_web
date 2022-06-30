@@ -216,5 +216,6 @@ $RECYCLE.BIN/
 
 #data
 /Data
+.env
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,python
